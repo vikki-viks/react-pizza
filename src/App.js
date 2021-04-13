@@ -1,9 +1,11 @@
+import Button from "./Button";
 import Header from "./Header";
 
 function App() {
   return (
     <div className="wrapper">
       <Header></Header>
+      <Button></Button>
       <div className="content">
         <div className="container">
           <div className="content__top">
