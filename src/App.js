@@ -2,10 +2,13 @@ import Button from "./Button";
 import Header from "./Header";
 
 function App() {
+  const clickPoKnopke = () => {
+    alert("Hello!");
+  };
   return (
     <div className="wrapper">
       <Header></Header>
-      <Button></Button>
+      <Button onClick={clickPoKnopke}></Button>
       <div className="content">
         <div className="container">
           <div className="content__top">
