@@ -1,4 +1,4 @@
-import { Header, Categories } from "./components";
+import { Header, Categories } from './components';
 
 function App() {
   return (
@@ -7,7 +7,16 @@ function App() {
       <div className="content">
         <div className="container">
           <div className="content__top">
-            <Categories></Categories>
+            <Categories
+              onClickItem={(name) => console.log(name)}
+              items={[
+                'Мясные',
+                'Вегетарианские',
+                'Гриль',
+                'Острые',
+                'Закрытые',
+              ]}
+            ></Categories>
             <div className="sort">
               <div className="sort__label">
                 <svg
@@ -73,7 +82,7 @@ function App() {
                   <i>2</i>
                 </div>
               </div>
-            </div>{" "}
+            </div>{' '}
             <div className="pizza-block">
               <img
                 className="pizza-block__image"
@@ -111,7 +120,7 @@ function App() {
                   <i>2</i>
                 </div>
               </div>
-            </div>{" "}
+            </div>{' '}
             <div className="pizza-block">
               <img
                 className="pizza-block__image"
@@ -149,7 +158,7 @@ function App() {
                   <i>2</i>
                 </div>
               </div>
-            </div>{" "}
+            </div>{' '}
             <div className="pizza-block">
               <img
                 className="pizza-block__image"
@@ -187,7 +196,7 @@ function App() {
                   <i>2</i>
                 </div>
               </div>
-            </div>{" "}
+            </div>{' '}
             <div className="pizza-block">
               <img
                 className="pizza-block__image"
@@ -225,7 +234,7 @@ function App() {
                   <i>2</i>
                 </div>
               </div>
-            </div>{" "}
+            </div>{' '}
             <div className="pizza-block">
               <img
                 className="pizza-block__image"
@@ -263,7 +272,7 @@ function App() {
                   <i>2</i>
                 </div>
               </div>
-            </div>{" "}
+            </div>{' '}
             <div className="pizza-block">
               <img
                 className="pizza-block__image"
@@ -301,7 +310,7 @@ function App() {
                   <i>2</i>
                 </div>
               </div>
-            </div>{" "}
+            </div>{' '}
             <div className="pizza-block">
               <img
                 className="pizza-block__image"
@@ -339,7 +348,7 @@ function App() {
                   <i>2</i>
                 </div>
               </div>
-            </div>{" "}
+            </div>{' '}
             <div className="pizza-block">
               <img
                 className="pizza-block__image"

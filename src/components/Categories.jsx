@@ -1,13 +1,9 @@
-function Categories() {
+function Categories({items, onClickItem}) {
   return (
     <div className="categories">
       <ul>
         <li className="active">Все</li>
-        <li>Мясные</li>
-        <li>Вегетарианская</li>
-        <li>Гриль</li>
-        <li>Острые</li>
-        <li>Закрытые</li>
+        {items.map((name,index) => < li onClick={() => onClickItem(name)} key={`${name}_${index}`}>{name}</li>)}
       </ul>
     </div>
   );
