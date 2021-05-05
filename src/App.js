@@ -17,7 +17,7 @@ function App() {
                 'Закрытые',
               ]}
             ></Categories>
-            <SortPopup></SortPopup>
+            <SortPopup items={['популярности', 'цена', 'алфавит']}></SortPopup>
           </div>
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
