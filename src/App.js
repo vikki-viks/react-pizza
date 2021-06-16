@@ -5,8 +5,6 @@ import { Home, Cart } from './pages';
 import PropTypes from 'prop-types';
 
 function App() {
-  const [pizzas, setPizzas] = React.useState([]);
-
   React.useEffect(() => {
     fetch('http://localhost:3000/db.json')
       .then((resp) => resp.json())
