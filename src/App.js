@@ -3,14 +3,17 @@ import { Route } from 'react-router';
 import { Header, PizzaBlock } from './components';
 import { Home, Cart } from './pages';
 import PropTypes from 'prop-types';
+import { setPizzas } from './redux/actions/pizzas';
+import { useSelector, useDispatch } from 'react-redux';
+import axios from 'axios';
 
-function App() {
+function App({ items }) {
+  const dispatch = useDispatch();
+
   React.useEffect(() => {
-    fetch('http://localhost:3000/db.json')
-      .then((resp) => resp.json())
-      .then((json) => {
-        setPizzas(json.pizzas);
-      });
+    axios
+      .get('http://localhost:3000/db.json')
+      .then(({ data }) => dispatch(setPizzas(data.pizzas)));
   }, []);
   return (
     <div className="wrapper">
@@ -18,7 +21,7 @@ function App() {
       <div className="content">
         <Route
           path="/"
-          render={() => <Home items={pizzas}></Home>}
+          render={() => <Home items={items}></Home>}
           exact
         ></Route>
         <Route path="/cart" component={Cart} exact></Route>
@@ -40,3 +43,17 @@ PizzaBlock.defaultProps = {
 };
 
 export default App;
+
+// export default connect(
+//   (state) => {
+//     return {
+//       items: state.pizzas.items,
+//       filters: state.filters,
+//     };
+//   },
+//   (dispatch) => {
+//     return {
+//       setPizzas: (items) => dispatch(setPizzas(items)),
+//     };
+//   }
+// )(App);
