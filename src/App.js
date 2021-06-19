@@ -7,8 +7,14 @@ import { setPizzas } from './redux/actions/pizzas';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 
-function App({ items }) {
+function App() {
   const dispatch = useDispatch();
+  const { items } = useSelector(({ pizzas, filters }) => {
+    return {
+      items: pizzas.items,
+      sortBy: filters.sortBy,
+    };
+  });
 
   React.useEffect(() => {
     axios
