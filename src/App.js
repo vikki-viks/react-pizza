@@ -4,17 +4,11 @@ import { Header, PizzaBlock } from './components';
 import { Home, Cart } from './pages';
 import PropTypes from 'prop-types';
 import { setPizzas } from './redux/actions/pizzas';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
 function App() {
   const dispatch = useDispatch();
-  const { items } = useSelector(({ pizzas, filters }) => {
-    return {
-      items: pizzas.items,
-      sortBy: filters.sortBy,
-    };
-  });
 
   React.useEffect(() => {
     axios
@@ -25,11 +19,7 @@ function App() {
     <div className="wrapper">
       <Header></Header>
       <div className="content">
-        <Route
-          path="/"
-          render={() => <Home items={items}></Home>}
-          exact
-        ></Route>
+        <Route path="/" component={Home} exact></Route>
         <Route path="/cart" component={Cart} exact></Route>
       </div>
     </div>
