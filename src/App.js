@@ -3,18 +3,12 @@ import { Route } from 'react-router';
 import { Header, PizzaBlock } from './components';
 import { Home, Cart } from './pages';
 import PropTypes from 'prop-types';
-import { setPizzas } from './redux/actions/pizzas';
 import { useDispatch } from 'react-redux';
-import axios from 'axios';
 
 function App() {
   const dispatch = useDispatch();
 
-  React.useEffect(() => {
-    axios
-      .get('http://localhost:3000/db.json')
-      .then(({ data }) => dispatch(setPizzas(data.pizzas)));
-  }, []);
+  React.useEffect(() => {}, []);
   return (
     <div className="wrapper">
       <Header></Header>
